@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% block title %}
+
+  <title>{{title}}</title>
+  {% endblock %}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  {% block custom_styles %}
+  {{custom_styles}}
+  {% endblock custom_styles%}
+</head>
+
+<body>
+  {% block content %} {{content}} {% endblock content %}
+
+  {% block scripts %}
+  {{scripts}}
+
+  {% endblock scripts %}
+</body>
+
+</html>

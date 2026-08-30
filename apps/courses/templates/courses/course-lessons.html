@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Django</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/lessons.css">
+</head>
+
+<body>
+    <!-- HEADER SUPERIOR -->
+    <header class="topbar">
+        <div class="acciones">
+            <div class="back-link"> <button class="discusiones">← Ve al panel de control</button></div>
+
+        </div>
+        <div class="logo"><img src="./images/devilearn.png" alt="Logo devilearn"></div>
+    </header>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <div class="layout">
+        <!-- SIDEBAR IZQUIERDA -->
+        <aside class="sidebar">
+
+
+            <h1 class="course-title">Django: Crea aplicaciones web robustas con Python</h1>
+            <p class="progress">0% completado</p>
+
+
+            <input class="lesson-search" placeholder="Buscar...">
+            <option>Buscar por título de lección</option>
+            </select>
+
+            <!-- SECCIONES -->
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Sección 1: Introducción al curso <span>0 / 6</span></button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Bienvenida</li>
+                            <li>¿Qué aprenderás?</li>
+                            <li>Requisitos del curso</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Sección 2: Fundamentos necesarios de Python <span>0 /
+                            27</span></button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Variables</li>
+                            <li>Condicionales</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Agrega más secciones si deseas -->
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL (VIDEO) -->
+        <main class="main-content">
+            <div class="content-header">Introducción al curso</div>
+            <div class="video-wrapper">
+                <video controls
+                    poster="https://placehold.co/800x450?text=Este+curso+est%C3%A1+en+proceso+de+construcci%C3%B3n">
+                    <source src="video-demo.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+            </div>
+            <div class="bottom-bar">
+                <button class="btn-complete">COMPLETAR Y CONTINUAR →</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/multimedia.js"></script>
+</body>
+
+</html>

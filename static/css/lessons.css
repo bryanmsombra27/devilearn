@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e1e1e;
+}
+
+.topbar .logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: right;
+}
+
+.topbar .logo img {
+    width: 40%;
+}
+
+.topbar .acciones button {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+aside.sidebar {
+    background: #efefef;
+    width: 300px;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.sidebar .back-link {
+    margin-bottom: 1rem;
+    color: #1e1e1e;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.sidebar .back-link a {
+    text-decoration: none;
+    color: #1e1e1e;
+}
+
+.topbar .back-link a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.course-title {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.progress {
+    font-size: 0.85rem;
+    color: #1e1e1e;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-search {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #333;
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #1e1e1e;
+    padding: 0.8rem 0;
+    text-align: left;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-title {
+    width: 80%;
+}
+
+.section-number {
+    width: 20%;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 1rem;
+}
+
+.accordion-content ul {
+    list-style: disc;
+    padding-left: 1rem;
+    color: #4e4e4e;
+    font-size: 12px;
+}
+
+.accordion-content ul li {
+    list-style: none;
+    padding: 5px 0px;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.video-wrapper {
+    flex-grow: 0;
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bottom-bar {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-complete {
+    background: #1e1e1e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* === Responsive Sidebar === */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        /* altura del header */
+        left: -100%;
+        width: 260px;
+        height: 100%;
+        background: #efefef;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+}
