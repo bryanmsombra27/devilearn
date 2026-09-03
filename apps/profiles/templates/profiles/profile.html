@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Perfil{% endblock title %}
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+{% endblock custom_styles %}
+{% block content %}
+    <div class="layout">
+        {% include "components/Sidebar.html" %}
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass icon"></i>
+                    <input type="text" placeholder="Buscar..." />
+                </div>
+                <div class="header-right">
+                    <div class="avatar">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" />
+                    </div>
+                </div>
+            </div>
+            <!-- Aquí va el contenido de la página -->
+            <main>
+                <div class="profile-container">
+                    <div class="profile-picture">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg"
+                             alt="Foto de perfil">
+                        <label for="fileUpload">Cargar nueva imagen</label>
+                        <input type="file" id="fileUpload" style="display: none;">
+                    </div>
+                    <form class="profile-form">
+                        <h2>Editar perfil</h2>
+                        <div class="input-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" value="usuario@correo.com">
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" value="Nombre">
+                            </div>
+                            <div class="input-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" id="apellido" value="Apellido">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="compania">Compañía</label>
+                            <input type="text" id="compania">
+                        </div>
+                        <div class="input-group">
+                            <label for="titulo">Título profesional</label>
+                            <input type="text" id="titulo">
+                        </div>
+                        <div class="input-group">
+                            <label for="zona">Zona horaria</label>
+                            <select id="zona">
+                                <option value="">Seleccione su zona horaria</option>
+                                <option value="UTC-6">UTC-6 Ciudad de México</option>
+                                <option value="UTC-5">UTC-5 Bogotá</option>
+                                <option value="UTC-3">UTC-3 Buenos Aires</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">Guardar cambios</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock content %}
+{% block scripts %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock scripts %}

@@ -1,0 +1,8 @@
+{
+  "djlint.useVenv": false,
+  "djlint.executablePath": "C:\\Users\\bryan\\.local\\bin\\djlint.exe",
+  "[django-html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.formatOnSave": true
+  }
+}

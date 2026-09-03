@@ -1,90 +1,69 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block title %}
-Detalle del curso
-{% endblock title%}
-
-
+    Detalle del curso
+{% endblock title %}
 {% block custom_styles %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 {% endblock custom_styles %}
-
 {% block content %}
-<div class="layout">
-    {% include "components/Sidebar.html" %}
-    <!-- Main content -->
-    <div class="main-content">
-        {% include "components/Header.html" %}
-
-        <!-- Aquí va el contenido de la página -->
-        <main>
-            <!-- === COURSE OVERVIEW === -->
-            <div class="course-layout">
-                <!-- Accordion del curso -->
-                <div class="course-sections">
-                    <h2>Contenido del curso</h2>
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <button class="accordion-header">Sección 1: Introducción al curso</button>
-                            <div class="accordion-content">
-                                <ul>
-                                    <li><i class="fa-solid fa-video"></i>¿Qué aprenderás en este curso?</li>
-                                    <li><i class="fa-solid fa-file"></i>Cómo usar la plataforma</li>
-                                </ul>
-                            </div>
+    <div class="layout">
+        {% include "components/Sidebar.html" %}
+        <!-- Main content -->
+        <div class="main-content">
+            {% include "components/Header.html" %}
+            <!-- Aquí va el contenido de la página -->
+            <main>
+                <!-- === COURSE OVERVIEW === -->
+                <div class="course-layout">
+                    <!-- Accordion del curso -->
+                    <div class="course-sections">
+                        <h2>Contenido del curso</h2>
+                        <div class="accordion">
+                            {% for course_content in course.course_countent %}
+                                <div class="accordion-item">
+                                    <button type="button" class="accordion-header">Sección {{ course_content.id }}: {{ course_content.name }}</button>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            {% for lessons in course_content.lessons %}
+                                                <li><i class="fa-solid {% if lessons.type == "video" %} fa-video {% else %} fa-file {% endif %}"></i>{{ lessons.name }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <!-- Agrega más secciones similares -->
                         </div>
-                        <div class="accordion-item">
-                            <button class="accordion-header">Sección 2: Fundamentos necesarios de Python</button>
-                            <div class="accordion-content">
-                                <ul>
-                                    <li>Variables y tipos de datos</li>
-                                    <li>Condicionales y bucles</li>
-                                    <li>Funciones básicas</li>
-                                </ul>
-                            </div>
+                    </div>
+                    <!-- Card lateral -->
+                    <div class="course-info-card">
+                        <div class="card-banner">
+                            <div class="tag">devilearn</div>
+                            <img src="{% static course.course_image %}"
+                                 alt="{{ course.course_title }}" />
+                            <img class="author-avatar"
+                                 src="https://randomuser.me/api/portraits/men/15.jpg"
+                                 alt="Autor">
                         </div>
-                        <div class="accordion-item">
-                            <button class="accordion-header">Sección 3: Introducción a Django</button>
-                            <div class="accordion-content">
-                                <ul>
-                                    <li>¿Qué es Django?</li>
-                                    <li>Primer proyecto con Django</li>
-                                </ul>
-                            </div>
+                        <div class="card-body">
+                            <h3>Acerca de este curso</h3>
+                            <ul class="course-details">
+                                <li><i class="fa-solid fa-file"></i> {{ course.info_course.lessons }} clases </li>
+                                <li>
+                                    <i class="fa-solid fa-video"></i> {{ course.info_course.duration }} horas de contenido en
+                                    video
+                                </li>
+                                <li><i class="fa-solid fa-graduation-cap"></i> {{ course.info_course.instructor }} </li>
+                            </ul>
+                            <a class="btn bnt-primary btn-course"
+                               href="{% url course.course_link %}">Continuar aprendiendo</a>
                         </div>
-                        <!-- Agrega más secciones similares -->
                     </div>
                 </div>
-
-                <!-- Card lateral -->
-                <div class="course-info-card">
-                    <div class="card-banner">
-                        <div class="tag">{devilearn}</div>
-                        <img src="https://placehold.co/600x200/1e1e1e/ffffff?text=django" alt="Curso Django" />
-                        <img class="author-avatar" src="https://randomuser.me/api/portraits/men/15.jpg" alt="Autor">
-                    </div>
-                    <div class="card-body">
-                        <h3>Acerca de este curso</h3>
-                        <ul class="course-details">
-                            <li><i class="fa-solid fa-file"></i> 79 lecciones</li>
-                            <li><i class="fa-solid fa-video"></i> 8 horas de contenido en video</li>
-                            <li><i class="fa-solid fa-graduation-cap"></i> Ricardo Cuéllar</li>
-                        </ul>
-                        <a class="btn bnt-primary btn-course" href="course_lessons.html">Continuar aprendiendo</a>
-
-                    </div>
-                </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
-</div>
 {% endblock content %}
-
-
-
 {% block scripts %}
-
-<script src="{% static 'js/script.js'  %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 {% endblock scripts %}
