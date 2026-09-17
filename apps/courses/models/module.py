@@ -1,5 +1,6 @@
 from django.db import models
 from .course import Course
+from ..fields import OrderField
 
 
 class Module(models.Model):
@@ -7,6 +8,7 @@ class Module(models.Model):
         Course, on_delete=models.CASCADE, related_name="modules")
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
+    order = OrderField(blank=True, for_fields=["course"])
 
     def __str__(self):
 

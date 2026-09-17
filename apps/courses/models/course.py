@@ -12,6 +12,10 @@ class Course(models.Model):
     created_at = models.DateField(auto_now_add=True)
     categories = models.ManyToManyField(
         Category, through="CourseCategory", related_name="courses")
+    image = models.URLField()
+    level = models.CharField(max_length=50)
+    rating = models.FloatField(default=0.0)
+    duration = models.FloatField(default=0.0)
 
     class Meta:
         ordering = ["-created_at"]

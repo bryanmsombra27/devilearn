@@ -23,38 +23,36 @@ Todos los cursos
 
             <div class="carousel-wrapper">
                 <div class="course-grid">
-                    <div class="course-grid">
 
-                        {% for course in courses %}
-                        <div class="course-card">
-                            <a href="{% url 'course_detail' course.id %}">
-                                <img src="{% static course.course_image  %}" alt="Course Image" class="course-img" />
-                                <div class="course-info">
-                                    <div class="course-rating">
-                                        <span class="tag beginner">{{course.level}}</span>
-                                        <div class="course-meta">
-                                            <span><i class="fa-solid fa-star"></i> {{course.rating}}</span>
-                                        </div>
-                                    </div>
-
-                                    <h3 class="course-title">
-                                        {{course.course_title}}
-                                    </h3>
-                                    <div class="author">
-                                        <img src="{{course.instructor_image}}"
-                                            alt="{{course.instructor}}" /><span>{{course.instructor}}</span>
+                    {% for course in courses %}
+                    <div class="course-card">
+                        <a href="{% url 'course_detail' course.id %}">
+                            <img src="{% static course.course_image  %}" alt="Course Image" class="course-img" />
+                            <div class="course-info">
+                                <div class="course-rating">
+                                    <span class="tag beginner">{{course.level}}</span>
+                                    <div class="course-meta">
+                                        <span><i class="fa-solid fa-star"></i> {{course.rating}}</span>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
 
-
-                        {% endfor %}
-                        <!-- Card 1 -->
-
-
-
+                                <h3 class="course-title">
+                                    {{course.course_title}}
+                                </h3>
+                                <div class="author">
+                                    <img src="{{course.instructor_image}}"
+                                        alt="{{course.instructor}}" /><span>{{course.instructor}}</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
+
+                    {% endfor %}
+                    <!-- Card 1 -->
+
+
+
                 </div>
             </div>
         </main>

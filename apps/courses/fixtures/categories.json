@@ -11,7 +11,7 @@
     "model": "courses.category",
     "pk": 2,
     "fields": {
-      "name": "Software development",
+      "name": "Software Development",
       "slug": "software-development"
     }
   },
@@ -27,7 +27,7 @@
     "model": "courses.category",
     "pk": 4,
     "fields": {
-      "name": "golang",
+      "name": "Golang",
       "slug": "golang"
     }
   },
@@ -35,8 +35,648 @@
     "model": "courses.category",
     "pk": 5,
     "fields": {
-      "name": "django",
+      "name": "Django",
       "slug": "django"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 6,
+    "fields": {
+      "name": "JavaScript",
+      "slug": "javascript"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 7,
+    "fields": {
+      "name": "Data Science",
+      "slug": "data-science"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 8,
+    "fields": {
+      "name": "Machine Learning",
+      "slug": "machine-learning"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 9,
+    "fields": {
+      "name": "Mobile Development",
+      "slug": "mobile-development"
+    }
+  },
+  {
+    "model": "courses.category",
+    "pk": 10,
+    "fields": {
+      "name": "DevOps",
+      "slug": "devops"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 5,
+    "fields": {
+      "owner": 1,
+      "title": "Introducción a HTML",
+      "slug": "introducción-a-html",
+      "overview": "Curso sobre Introducción a HTML desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 6,
+    "fields": {
+      "owner": 1,
+      "title": "CSS desde cero",
+      "slug": "css-desde-cero",
+      "overview": "Curso sobre CSS desde cero desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 7,
+    "fields": {
+      "owner": 1,
+      "title": "JavaScript moderno",
+      "slug": "javascript-moderno",
+      "overview": "Curso sobre JavaScript moderno desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 8,
+    "fields": {
+      "owner": 1,
+      "title": "React para principiantes",
+      "slug": "react-para-principiantes",
+      "overview": "Curso sobre React para principiantes desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 9,
+    "fields": {
+      "owner": 1,
+      "title": "Vue.js práctico",
+      "slug": "vue.js-práctico",
+      "overview": "Curso sobre Vue.js práctico desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 10,
+    "fields": {
+      "owner": 1,
+      "title": "Next.js profesional",
+      "slug": "next.js-profesional",
+      "overview": "Curso sobre Next.js profesional desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 11,
+    "fields": {
+      "owner": 1,
+      "title": "Node.js y Express",
+      "slug": "node.js-y-express",
+      "overview": "Curso sobre Node.js y Express desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 12,
+    "fields": {
+      "owner": 1,
+      "title": "MongoDB completo",
+      "slug": "mongodb-completo",
+      "overview": "Curso sobre MongoDB completo desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 13,
+    "fields": {
+      "owner": 1,
+      "title": "PostgreSQL desde cero",
+      "slug": "postgresql-desde-cero",
+      "overview": "Curso sobre PostgreSQL desde cero desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 14,
+    "fields": {
+      "owner": 1,
+      "title": "REST APIs con Django",
+      "slug": "rest-apis-con-django",
+      "overview": "Curso sobre REST APIs con Django desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 15,
+    "fields": {
+      "owner": 1,
+      "title": "Flask intermedio",
+      "slug": "flask-intermedio",
+      "overview": "Curso sobre Flask intermedio desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 16,
+    "fields": {
+      "owner": 1,
+      "title": "FastAPI para microservicios",
+      "slug": "fastapi-para-microservicios",
+      "overview": "Curso sobre FastAPI para microservicios desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 17,
+    "fields": {
+      "owner": 1,
+      "title": "Python para ciencia de datos",
+      "slug": "python-para-ciencia-de-datos",
+      "overview": "Curso sobre Python para ciencia de datos desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 18,
+    "fields": {
+      "owner": 1,
+      "title": "Pandas y NumPy",
+      "slug": "pandas-y-numpy",
+      "overview": "Curso sobre Pandas y NumPy desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 19,
+    "fields": {
+      "owner": 1,
+      "title": "Análisis de datos con Python",
+      "slug": "análisis-de-datos-con-python",
+      "overview": "Curso sobre Análisis de datos con Python desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 20,
+    "fields": {
+      "owner": 1,
+      "title": "Machine Learning con scikit-learn",
+      "slug": "machine-learning-con-scikit-learn",
+      "overview": "Curso sobre Machine Learning con scikit-learn desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 21,
+    "fields": {
+      "owner": 1,
+      "title": "Redes Neuronales con TensorFlow",
+      "slug": "redes-neuronales-con-tensorflow",
+      "overview": "Curso sobre Redes Neuronales con TensorFlow desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 22,
+    "fields": {
+      "owner": 1,
+      "title": "Deep Learning en Keras",
+      "slug": "deep-learning-en-keras",
+      "overview": "Curso sobre Deep Learning en Keras desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 23,
+    "fields": {
+      "owner": 1,
+      "title": "Docker y contenedores",
+      "slug": "docker-y-contenedores",
+      "overview": "Curso sobre Docker y contenedores desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 24,
+    "fields": {
+      "owner": 1,
+      "title": "Kubernetes para desarrolladores",
+      "slug": "kubernetes-para-desarrolladores",
+      "overview": "Curso sobre Kubernetes para desarrolladores desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 25,
+    "fields": {
+      "owner": 1,
+      "title": "Automatización con Python",
+      "slug": "automatización-con-python",
+      "overview": "Curso sobre Automatización con Python desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 26,
+    "fields": {
+      "owner": 1,
+      "title": "Git y GitHub",
+      "slug": "git-y-github",
+      "overview": "Curso sobre Git y GitHub desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 27,
+    "fields": {
+      "owner": 1,
+      "title": "JavaScript para backend",
+      "slug": "javascript-para-backend",
+      "overview": "Curso sobre JavaScript para backend desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 28,
+    "fields": {
+      "owner": 1,
+      "title": "Curso de TypeScript",
+      "slug": "curso-de-typescript",
+      "overview": "Curso sobre Curso de TypeScript desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 29,
+    "fields": {
+      "owner": 1,
+      "title": "Desarrollo con Angular",
+      "slug": "desarrollo-con-angular",
+      "overview": "Curso sobre Desarrollo con Angular desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 30,
+    "fields": {
+      "owner": 1,
+      "title": "Go para backend",
+      "slug": "go-para-backend",
+      "overview": "Curso sobre Go para backend desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 31,
+    "fields": {
+      "owner": 1,
+      "title": "Go avanzado",
+      "slug": "go-avanzado",
+      "overview": "Curso sobre Go avanzado desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 32,
+    "fields": {
+      "owner": 1,
+      "title": "Microservicios con Go",
+      "slug": "microservicios-con-go",
+      "overview": "Curso sobre Microservicios con Go desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 33,
+    "fields": {
+      "owner": 1,
+      "title": "Desarrollo iOS con Swift",
+      "slug": "desarrollo-ios-con-swift",
+      "overview": "Curso sobre Desarrollo iOS con Swift desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 34,
+    "fields": {
+      "owner": 1,
+      "title": "Android con Kotlin",
+      "slug": "android-con-kotlin",
+      "overview": "Curso sobre Android con Kotlin desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 35,
+    "fields": {
+      "owner": 1,
+      "title": "App híbridas con Flutter",
+      "slug": "app-híbridas-con-flutter",
+      "overview": "Curso sobre App híbridas con Flutter desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 36,
+    "fields": {
+      "owner": 1,
+      "title": "Backend con Laravel",
+      "slug": "backend-con-laravel",
+      "overview": "Curso sobre Backend con Laravel desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 37,
+    "fields": {
+      "owner": 1,
+      "title": "Curso completo de PHP",
+      "slug": "curso-completo-de-php",
+      "overview": "Curso sobre Curso completo de PHP desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 38,
+    "fields": {
+      "owner": 1,
+      "title": "Sistemas distribuidos",
+      "slug": "sistemas-distribuidos",
+      "overview": "Curso sobre Sistemas distribuidos desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 39,
+    "fields": {
+      "owner": 1,
+      "title": "APIs GraphQL",
+      "slug": "apis-graphql",
+      "overview": "Curso sobre APIs GraphQL desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 40,
+    "fields": {
+      "owner": 1,
+      "title": "Selenium y pruebas automatizadas",
+      "slug": "selenium-y-pruebas-automatizadas",
+      "overview": "Curso sobre Selenium y pruebas automatizadas desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 41,
+    "fields": {
+      "owner": 1,
+      "title": "TDD con Django",
+      "slug": "tdd-con-django",
+      "overview": "Curso sobre TDD con Django desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 42,
+    "fields": {
+      "owner": 1,
+      "title": "CI/CD con GitHub Actions",
+      "slug": "ci/cd-con-github-actions",
+      "overview": "Curso sobre CI/CD con GitHub Actions desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 43,
+    "fields": {
+      "owner": 1,
+      "title": "Despliegue con Heroku",
+      "slug": "despliegue-con-heroku",
+      "overview": "Curso sobre Despliegue con Heroku desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 44,
+    "fields": {
+      "owner": 1,
+      "title": "Scrum y metodologías ágiles",
+      "slug": "scrum-y-metodologías-ágiles",
+      "overview": "Curso sobre Scrum y metodologías ágiles desde cero hasta avanzado.",
+      "created_at": "2025-07-08",
+      "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
+      "level": "",
+      "rating": 0.0,
+      "duration": 0.0
     }
   }
 ]
