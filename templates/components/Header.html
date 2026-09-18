@@ -1,9 +1,9 @@
 <!-- Header -->
 <div class="header">
-    <div class="search-box">
+    <form class="search-box" method="get">
         <i class="fa-solid fa-magnifying-glass icon"></i>
-        <input type="text" placeholder="Buscar..." />
-    </div>
+        <input type="text" placeholder="Buscar..." name="q" value="{% if query %} {{query}} {% endif %}" />
+    </form>
     <div class="header-right">
         <div class="avatar">
             <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" />

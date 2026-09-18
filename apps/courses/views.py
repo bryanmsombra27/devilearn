@@ -1,54 +1,44 @@
 from django.shortcuts import render
-
+from .models import Course
 # Create your views here.
-courses = [
-    {
-        "id": 1,
-        "level": "principante",
-        "rating": 4.8,
-        "course_title": "Python fundamentos hasta los detalles",
-        "instructor": "Alison Doe",
-        "course_image": "images/curso_1.jpg",
-        "instructor_image": "https://randomuser.me/api/portraits/women/68.jpg"
-    }
-]
+from django.db.models import Q
+from django.core.paginator import Paginator
+from django.http import HttpResponseNotFound
 
 
 def course_list(request):
+    courses = Course.objects.all()
+    query = request.GET.get("q")
+
+    if query:
+        courses = courses.filter(
+            Q(title__icontains=query) |
+            Q(owner__first_name__icontains=query)
+        )
+    paginator = Paginator(courses, 8)
+    page_number = request.GET.get("page")
+    courses_obj = paginator.get_page(page_number)
+
+    query_params = request.GET.copy()
+
+    if "page" in query_params:
+        query_params.pop("page")
+
+    query_string = query_params.urlencode()
 
     return render(request, 'courses/courses.html', {
-        "courses": courses
+        "courses_obj": courses_obj,
+        "query": query,
+        "query_string": query_string
     })
 
 
-def course_detail(request, id):
+def course_detail(request, slug):
     # course = [course.id == id for course in courses][0]
-    course = {
-        "course_title": "Django aplicaciones",
-        "course_link": "course_lessons",
-        "course_image": "images/curso_2.jpg",
-        "info_course": {
-            "lessons": 79,
-            "duration": 8,
-            "instructor": "Bryan Ochoa"
-        },
-        "course_content": [
-            {
-                "id": 1,
-                "name": "Introduccion al curso",
-                "lessons": [
-                    {
-                        "name": "¿Que obtentdrás de este curso?",
-                        "type": "video"
-                    },
-                    {
-                        "name": "¿Como usar la plataforma?",
-                        "type": "article"
-                    },
-                ]
-            }
-        ]
-    }
+    course = Course.objects.get(slug=slug)
+
+    if not course:
+        return HttpResponseNotFound(content="curso no encontrado")
 
     return render(request, 'courses/course-detail.html', {
         "course": course
@@ -74,7 +64,7 @@ def course_lessons(request, id):
                     {
                             "name": "¿Como usar la plataforma?",
                             "type": "article"
-                    },
+                        },
                 ]
             }
         ]

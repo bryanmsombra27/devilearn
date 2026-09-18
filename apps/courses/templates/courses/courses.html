@@ -24,10 +24,11 @@ Todos los cursos
             <div class="carousel-wrapper">
                 <div class="course-grid">
 
-                    {% for course in courses %}
+                    {% for course in courses_obj %}
                     <div class="course-card">
-                        <a href="{% url 'course_detail' course.id %}">
-                            <img src="{% static course.course_image  %}" alt="Course Image" class="course-img" />
+                        <a href="{% url 'course_detail' slug=course.slug %}">
+                            <!-- <img src="{% static course.course_image  %}" alt="Course Image" class="course-img" /> -->
+                            <img src="{{course.image}}" alt="Course Image" class="course-img" />
                             <div class="course-info">
                                 <div class="course-rating">
                                     <span class="tag beginner">{{course.level}}</span>
@@ -37,11 +38,11 @@ Todos los cursos
                                 </div>
 
                                 <h3 class="course-title">
-                                    {{course.course_title}}
+                                    {{course.title}}
                                 </h3>
                                 <div class="author">
-                                    <img src="{{course.instructor_image}}"
-                                        alt="{{course.instructor}}" /><span>{{course.instructor}}</span>
+                                    <img src="{{course.owner.instructor_profile.photo}}"
+                                        alt="{{course.instructor}}" /><span>{{course.owner.get_full_name}}</span>
                                 </div>
                             </div>
                         </a>
@@ -54,6 +55,23 @@ Todos los cursos
 
 
                 </div>
+
+                <div class="paginator">
+                    {% if courses_obj.has_previous %}
+                    <a href="?page=1&{{query_string}}">Inicio</a>
+                    <a href="?page={{courses_obj.previous_page_number }}&{{query_string}}">Anterior</a>
+
+                    {% endif %}
+
+                    <span>Pagina {{courses_obj.number}} de {{courses_obj.paginator.num_pages}}</span>
+
+                    {% if courses_obj.has_next %}
+                    <a href="?page={{courses_obj.next_page_number }}&{{query_string}}">Siguiente</a>
+                    <a href="?page={{courses_obj.paginator.num_pages}}&{{query_string}}">Ultima</a>
+
+                    {% endif %}
+                </div>
+
             </div>
         </main>
     </div>
