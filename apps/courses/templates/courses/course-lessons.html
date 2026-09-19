@@ -1,65 +1,67 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-    Lecciones
+Lecciones
 {% endblock title %}
 {% block custom_styles %}
-    <link rel="stylesheet" href="{% static 'css/lessons.css' %}" />
+<link rel="stylesheet" href="{% static 'css/lessons.css' %}" />
 {% endblock custom_styles %}
 {% block content %}
-    <!-- HEADER SUPERIOR -->
-    <header class="topbar">
-        <div class="acciones">
-            <div class="back-link">
-                <button class="discusiones" type="button">← Ve al panel de control</button>
-            </div>
+<!-- HEADER SUPERIOR -->
+<header class="topbar">
+    <div class="acciones">
+        <div class="back-link">
+            <button class="discusiones" type="button">← Ve al panel de control</button>
         </div>
-        <div class="logo">
-            <img src="{% static "images/devilearn.png" %} %}" alt="Logo devilearn">
-        </div>
-    </header>
-    <!-- LAYOUT PRINCIPAL -->
-    <div class="layout">
-        <!-- SIDEBAR IZQUIERDA -->
-        <aside class="sidebar">
-            <h1 class="course-title">{{ lesson.course_title }}</h1>
-            <p class="progress">{{ lesson.progress }}% completado</p>
-            <select>
-                <input class="lesson-search" placeholder="Buscar...">
-                <option>Buscar por título de lección</option>
-            </select>
-            <!-- SECCIONES -->
-            <div class="accordion">
-                {% for content in lesson.course_content %}
-                    <div class="accordion-item">
-                        <button class="accordion-header" type="button">Sección {{ content.id }}: {{ content.name }} <span>{{ content.complete_lessons }} / {{ content.total_lessons }}</span></button>
-                        <div class="accordion-content">
-                            <ul>
-                                {% for less in content.lessons %}
-                                    <li>{{ less.name }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </aside>
-        <!-- CONTENIDO PRINCIPAL (VIDEO) -->
-        <main class="main-content">
-            <div class="content-header">Introducción al curso</div>
-            <div class="video-wrapper">
-                <video controls
-                       poster="https://placehold.co/800x450?text=Este+curso+est%C3%A1+en+proceso+de+construcci%C3%B3n">
-                    <source src="video-demo.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
-            </div>
-            <div class="bottom-bar">
-                <button class="btn-complete" type="button">COMPLETAR Y CONTINUAR →</button>
-            </div>
-        </main>
     </div>
+    <div class="logo">
+        <img src="{% static " images/devilearn.png" %}" alt="Logo devilearn">
+    </div>
+</header>
+<!-- LAYOUT PRINCIPAL -->
+<div class="layout">
+    <!-- SIDEBAR IZQUIERDA -->
+    <aside class="sidebar">
+        <h1 class="course-title">{{ course_title }}</h1>
+        <p class="progress">{{ lesson.progress }}% completado</p>
+        <select>
+            <input class="lesson-search" placeholder="Buscar...">
+            <option>Buscar por título de lección</option>
+        </select>
+        <!-- SECCIONES -->
+        <div class="accordion">
+            {% for module in modules %}
+            <div class="accordion-item">
+                <button class="accordion-header" type="button">Sección {{ forloop.counter }}: {{ module.title }}
+                    <span>{{
+                        module.complete_lessons }} / {{ module.contents.count }}</span></button>
+                <div class="accordion-content">
+                    <ul>
+                        {% for content in module.contents.all %}
+                        <li>{{ content.item.title }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </aside>
+    <!-- CONTENIDO PRINCIPAL (VIDEO) -->
+    <main class="main-content">
+        <div class="content-header">Introducción al curso</div>
+        <div class="video-wrapper">
+            <video controls
+                poster="https://placehold.co/800x450?text=Este+curso+est%C3%A1+en+proceso+de+construcci%C3%B3n">
+                <source src="video-demo.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+        <div class="bottom-bar">
+            <button class="btn-complete" type="button">COMPLETAR Y CONTINUAR →</button>
+        </div>
+    </main>
+</div>
 {% endblock content %}
 {% block scripts %}
-    <script src="{% static 'js/multimedia.js' %}"></script>
+<script src="{% static 'js/multimedia.js' %}"></script>
 {% endblock scripts %}

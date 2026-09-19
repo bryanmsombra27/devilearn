@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Course
 # Create your views here.
 from django.db.models import Q
@@ -34,42 +34,23 @@ def course_list(request):
 
 
 def course_detail(request, slug):
-    # course = [course.id == id for course in courses][0]
-    course = Course.objects.get(slug=slug)
-
-    if not course:
-        return HttpResponseNotFound(content="curso no encontrado")
+    course = get_object_or_404(Course, slug=slug)
+    modules = course.modules.prefetch_related("contents")
+    total_content = sum(module.contents.count() for module in modules)
 
     return render(request, 'courses/course-detail.html', {
-        "course": course
+        "course": course,
+        "modules": modules,
+        "total_content": total_content
     })
 
 
-def course_lessons(request, id):
-    lesson = {
-        "course_title": "Django aplicaciones",
-        "progress": 30,
-
-        "course_content": [
-            {
-                "id": 1,
-                "name": "Introduccion al curso",
-                "total_lessons": 6,
-                "complete_lessons": 3,
-                "lessons": [
-                        {
-                            "name": "¿Que obtentdrás de este curso?",
-                            "type": "video"
-                        },
-                    {
-                            "name": "¿Como usar la plataforma?",
-                            "type": "article"
-                        },
-                ]
-            }
-        ]
-    }
+def course_lessons(request, slug):
+    course = get_object_or_404(Course, slug=slug)
+    course_title = course.title
+    modules = course.modules.prefetch_related("contents")
 
     return render(request, 'courses/course-lessons.html', {
-        "lesson": lesson
+        "course_title": course_title,
+        "modules": modules,
     })
